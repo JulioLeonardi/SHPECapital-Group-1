@@ -21,8 +21,12 @@ print("test")
 #rapidly to add them to our portfolio, but with way stricter stop loss
 #parameters. 
 
+#The base percentage of Stop loss tolerance is 5%, the flexibility score 
+#multiplies to the stop tolerance percentage to 
+
+#Resistance and support trend following? Moving average, 20 day low, 20 day high,
+#
+
 #class IPO
 #Member values are values we are looking at, plus the flexibility score
-
-#def ComputeFlexScore
-#
+#Flexibility socre starts empty
