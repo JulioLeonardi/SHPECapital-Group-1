@@ -1,7 +1,6 @@
-# features.py
 import numpy as np
 import pandas as pd
-from .indicators import *
+from indicators import *
 
 def zscore(s: pd.Series, win: int=100) -> pd.Series:
     m = s.rolling(win).mean()

@@ -1,8 +1,8 @@
 import pandas as pd
-from .features import trend_features, momentum_features, volume_features, volatility_features, breadth_features
-from .signals import combine_scores, to_signal
-from .position import position_size
-from .config import StrategyConfig
+from features import trend_features, momentum_features, volume_features, volatility_features, breadth_features
+from signals import combine_scores, to_signal
+from position import position_size
+from config import StrategyConfig
 
 def build_strategy_signals(tdf: pd.DataFrame,
                            market_df: pd.DataFrame,

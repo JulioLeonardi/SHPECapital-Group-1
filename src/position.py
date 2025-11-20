@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from .indicators import atr_pct
+from indicators import atr_pct
 
 def position_size(df: pd.DataFrame, risk_per_trade: float=0.01, max_leverage: float=1.0) -> pd.Series:
     close, high, low = df['Close'], df['High'], df['Low']
