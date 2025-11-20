@@ -1,7 +1,9 @@
 import os
 from typing import Optional
+from dotenv import load_dotenv
 import alpaca_trade_api as tradeapi
 
+load_dotenv()
 
 def _get_keys():
     """
@@ -10,7 +12,7 @@ def _get_keys():
     """
     key = os.getenv("ALPACA_API_KEY")
     secret = os.getenv("ALPACA_SECRET_KEY")
-    base_url = os.getenv("APCA_API_BASE_URL")
+    base_url = os.getenv("ALPACA_BASE_URL")
     
     return key, secret, base_url
 
