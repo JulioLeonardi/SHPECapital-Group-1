@@ -1,4 +1,3 @@
-# indicators.py
 import numpy as np
 import pandas as pd
 from ta.trend import ADXIndicator
