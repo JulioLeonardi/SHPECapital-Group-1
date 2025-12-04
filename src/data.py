@@ -37,7 +37,6 @@ def normalize_ohlcv(df: pd.DataFrame, ticker: str | None = None) -> pd.DataFrame
     return df
 
 SECTOR_ETF_MAP = {
-    # extend as needed
     'AAPL': 'XLK', 'MSFT': 'XLK', 'NVDA': 'XLK', 'AMZN': 'XLY', 'META': 'XLC', 'GOOGL': 'XLC',
     'JPM': 'XLF', 'BAC': 'XLF', 'C': 'XLF','XOM': 'XLE', 'CVX': 'XLE',
 }
