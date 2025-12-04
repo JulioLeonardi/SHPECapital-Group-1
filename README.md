@@ -37,52 +37,53 @@ The size of our position is determined using ATR% scores to keep risk of trade c
 
 ## 2. How to get this working:
 
-1) ****Set up Python**
-    - Install Python 3.10+ from python.org.
-    - Open **PowerShell** (Windows) or **Terminal** (mac/Linux).
+1) **Set up Python**
+   - Install Python 3.10+ from python.org.
+   - Open **PowerShell** (Windows) or **Terminal** (mac/Linux).
 
 2) **Create & activate a virtual environment**
-    **Windows (PowerShell)**
-    python -m venv .venv
-    .\.venv\Scripts\Activate.ps1
-    # If blocked: Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+   **Windows (PowerShell)**
+   python -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   # If blocked: Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
-    **MacOS and Linux**
-    python3 -m venv .venv
-    source .venv/bin/activate
+   **MacOS and Linux**
+   python3 -m venv .venv
+   source .venv/bin/activate
 
 3) **Install dependencies**
-    pip install -r requirements.txt
+   pip install -r requirements.txt
 
 4) **Backtest**
-    Example:
+   Example:
 
-    python -m src.trader --ticker AAPL --start 2015-01-01 --fee_bps 2
+   Inside src (cd src)
+   python -m backtest --ticker AAPL --start 2015-01-01 --fee_bps 2
 
-    Arguments:
+   Arguments:
 
-    --ticker – Symbol (default: AAPL).
-    --start – Start date (YYYY-MM-DD).
-    --end – Optional end date (defaults to today).
-    --fee_bps – One-way trading fee in basis points (default 2 bps).
-    --slip_bps – Additional slippage in bps (default 0).
+   --ticker – Symbol (default: AAPL).
+   --start – Start date (YYYY-MM-DD).
+   --end – Optional end date (defaults to today).
+   --fee_bps – One-way trading fee in basis points (default 2 bps).
+   --slip_bps – Additional slippage in bps (default 0).
 
-    Running the script will: 
-    - Download data for the target ticker
-    - Download SPY, ^VIX, and the sector ETF as references
-    - Build factor scores
-    - Run a simple daily-rebalanced backtest with trading costs included
-    - Prints a summary to the terminal
+   Running the script will: 
+   - Download data for the target ticker
+   - Download SPY, ^VIX, and the sector ETF as references
+   - Build factor scores
+   - Run a simple daily-rebalanced backtest with trading costs included
+   - Prints a summary to the terminal
 
 5) **Trading with Alpaca**
 
-    Right now we are using this with paper trading. You would have to setup your
-    .env in the root directory with your ALPACA_API_KEY, ALPACA_SECRET_KEY, and
-    ALPACA_BASE_URL.
+   Right now we are using this with paper trading. You would have to setup your
+   .env in the root directory with your ALPACA_API_KEY, ALPACA_SECRET_KEY, and
+   ALPACA_BASE_URL.
 
-    After that you can run a rebalance cycle using:
+   After that you can run a rebalance cycle using:
 
-    python live_trader.py --ticker AAPL 2025-01-01
+   python live_trader.py --ticker AAPL 2025-01-01
 
-    The script uses our same composite scores to determine the most optimal transaction
-    with the most up to date information at the time it was done. 
+   The script uses our same composite scores to determine the most optimal transaction
+   with the most up to date information at the time it was done. 
